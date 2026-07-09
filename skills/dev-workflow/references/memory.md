@@ -75,6 +75,27 @@ once structure stabilizes, update only on real structural change — not per ses
 `memory.json`'s `decisions` array stays session-scoped (why *this change* was made).
 Don't duplicate an entry into both — file it once, in whichever scope it belongs to.
 
+## Knowledge Base Layer (Graphify)
+
+The memory files above are the *mechanical* layer: session-scoped, truncated,
+rewritten often. Durable knowledge lives in the knowledge graph, fed through the
+**graphify** skill (`/graphify` — routes any input to the knowledge graph).
+
+**What flows to the graph** (at the same moments as the Write Protocol below,
+when graphify is installed):
+- Decisions with their rationale — once they're stable, not per-session churn
+- Architecture changes (the same events that update `architecture.json`)
+- Lessons: real failures, root causes, and fixes worth keeping across projects
+
+**What stays out of the graph:**
+- Mechanical state (branch, dirty counts, open-work status) — that's `memory.json`'s job
+- Anything transient, and never secrets/tokens/credentials
+
+**If graphify is not installed:** `memory.json` is the only persistence layer.
+Say so once ("knowledge-graph handoff skipped — graphify not installed") rather
+than failing or silently dropping the durable items; they stay in `memory.json`
+until the graph is available.
+
 ## Load Protocol (session start)
 
 Handled by the plugin's SessionStart hook — the memory files arrive in context

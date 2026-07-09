@@ -2,6 +2,12 @@
 
 **The best solution reaches a correct conclusion using the smallest amount of necessary context.**
 
+> **Foundation: ECC.** This file operationalizes the Context Window Management
+> guidance in `~/.claude/rules/ecc/common/performance.md` for this pack's tasks
+> (verified present by dev-workflow's Environment Verification). The budget zones
+> below implement ECC's "avoid the last 20% of the context window" rule with
+> earlier, finer-grained thresholds. Where this file and ECC disagree, ECC wins.
+
 ---
 
 ## Decision Rule

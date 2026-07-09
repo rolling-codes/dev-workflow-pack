@@ -25,17 +25,25 @@ live in `references/`, loaded one at a time, only for the task at hand.
 
 ## Environment Verification
 
-The TDD and Code Review steps lean on the ECC rules. Before running the full
+The pipeline and the context rules lean on ECC. Before running the full
 pipeline, verify these exist:
 
 - `~/.claude/rules/ecc/common/development-workflow.md`
 - `~/.claude/rules/ecc/common/git-workflow.md`
 - `~/.claude/rules/ecc/common/testing.md`
 - `~/.claude/rules/ecc/common/code-review.md`
+- `~/.claude/rules/ecc/common/performance.md` — context-management foundation
 
-If any are missing, stop and tell the user which ones — the pipeline's test-coverage
-and review requirements come from those files, so proceeding without them means
-enforcing rules that aren't defined.
+If any are missing, stop and tell the user which ones — the pipeline's
+test-coverage, review, and context-budget requirements come from those files, so
+proceeding without them means enforcing rules that aren't defined.
+
+**Optional integration — Graphify (knowledge base):** if the graphify skill is
+installed (invoked via `/graphify`), durable knowledge — decisions with rationale,
+architecture changes, lessons — flows to the knowledge graph at session end; see
+`references/memory.md` § Knowledge Base Layer. If graphify is absent,
+`.claude/memory.json` remains the only persistence layer: note the gap to the
+user, don't block on it.
 
 ## Iron Law
 
@@ -179,6 +187,11 @@ because registry updates must not require touching this file.
 
 > Before reading any file: "Will this materially improve my ability to complete
 > the task?" If not clearly yes — do not load it.
+
+Context management is grounded in ECC: this rule and
+`references/context-management.md` operationalize the Context Window Management
+guidance in `~/.claude/rules/ecc/common/performance.md`. Where the two disagree,
+ECC wins — it's the user-level rule set.
 
 Depth by task: routine change → target file only; feature work → interface +
 relevant files; architecture/security/debugging → full chain.

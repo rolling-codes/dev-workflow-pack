@@ -84,6 +84,13 @@ If dev-workflow is installed, this maps directly onto `.claude/memory.json`'s
 schema — write there instead of a bare chat summary so it survives the session,
 not just the current compaction.
 
+Durable knowledge surfaced while compressing — a decision with its rationale, an
+architecture change, a lesson worth keeping across projects — belongs in the
+knowledge graph via the **graphify** skill (`/graphify`), not just in the session
+summary; see dev-workflow's `references/memory.md` § Knowledge Base Layer. If
+graphify isn't installed, keep those items in `memory.json` and say the handoff
+was skipped.
+
 ---
 
 ## Step 4: Memory Aging

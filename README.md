@@ -87,6 +87,22 @@ new or changed skill in a real session before shipping.
 
 Commit both for team-shared memory, or add `.claude/memory*.json` to `.gitignore` to keep memory local.
 
+## Integrations
+
+- **ECC (context management + pipeline rules).** dev-workflow's Environment
+  Verification checks that the ECC rules exist at `~/.claude/rules/ecc/common/`
+  (development-workflow, git-workflow, testing, code-review, performance). The
+  pack's Context Rule and `references/context-management.md` operationalize
+  ECC's Context Window Management; ECC wins on conflict. Missing rules stop the
+  full pipeline — the TDD, review, and budget requirements are defined there.
+- **Graphify (knowledge base, optional).** Durable knowledge — decisions with
+  rationale, architecture changes, lessons — flows to the knowledge graph via
+  the graphify skill (`/graphify`) at session end and during context
+  compression. Without graphify, `.claude/memory.json` is the only persistence
+  layer; the skills note the skipped handoff instead of blocking or silently
+  dropping items. See `skills/dev-workflow/references/memory.md` § Knowledge
+  Base Layer.
+
 ## Review before you trust
 
 Hooks execute shell commands with your user permissions. Read `hooks/scripts/` before installing — they are short on purpose.
