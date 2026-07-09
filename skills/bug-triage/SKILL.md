@@ -4,7 +4,7 @@ description: >
   Use this to consolidate, deduplicate, and severity-rank a pile of raw bug
   findings into one actionable report when multiple bugs, findings, or review
   results need ranking — "triage these", "which bugs should I fix first",
-  "consolidate findings", or any dump of multiple reports or review-agent
+  "consolidate findings", or a dump of multiple reports or review-agent
   output; NOT for fixing the bugs (dev-workflow), NOT for reviewing a diff to
   find new issues (code-review), and NOT for a single already-identified bug.
 ---
