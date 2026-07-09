@@ -1,0 +1,15 @@
+{
+  "name": "dev-workflow-pack-local",
+  "owner": {
+    "name": "RollingCodes",
+    "url": "https://github.com/rolling-codes"
+  },
+  "plugins": [
+    {
+      "name": "dev-workflow-pack",
+      "source": "./",
+      "description": "Twelve development-workflow skills rebuilt through the skill-architect six-gate pipeline, plus hook-enforced session memory and branch protection.",
+      "category": "development"
+    }
+  ]
+}

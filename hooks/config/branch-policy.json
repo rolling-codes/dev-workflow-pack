@@ -1,0 +1,10 @@
+{
+  "_comment": "Read by protect-branches.sh. Glob patterns matched against the current branch name (case sh style, e.g. release/* matches release/anything).",
+  "protected_branches": [
+    "main",
+    "master",
+    "develop",
+    "release/*",
+    "hotfix/*"
+  ]
+}

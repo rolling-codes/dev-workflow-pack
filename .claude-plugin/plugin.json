@@ -1,0 +1,21 @@
+{
+  "name": "dev-workflow-pack",
+  "version": "2.0.0",
+  "description": "Twelve development-workflow skills rebuilt through the skill-architect six-gate pipeline, plus hook-enforced session memory and branch protection, packaged as one Claude Code plugin.",
+  "author": {
+    "name": "RollingCodes",
+    "url": "https://github.com/rolling-codes"
+  },
+  "repository": "https://github.com/rolling-codes/dev-workflow-pack",
+  "license": "MIT",
+  "keywords": [
+    "development",
+    "workflow",
+    "code-review",
+    "git",
+    "commit",
+    "changelog",
+    "release",
+    "testing"
+  ]
+}

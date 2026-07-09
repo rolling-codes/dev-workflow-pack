@@ -1,0 +1,17 @@
+{
+  "description": "Branch protection only — memory hooks disabled; claude-mem handles session memory.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/protect-branches.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
