@@ -3,9 +3,9 @@ name: docs-audit
 description: >
   Use this to audit project documentation (README, CONTRIBUTING, API docs,
   wikis, in-repo .md files) against what the codebase actually does now, and
-  prune or update what's stale — "review the docs", "are the docs out of
-  date", "clean up the README", "docs don't match the code anymore", or after
-  a release/major refactor before tagging; NOT for session context
+  prune or update what's stale, when asked "review the docs", "are the docs
+  out of date", "clean up the README", "docs don't match the code anymore",
+  or after a release/major refactor before tagging; NOT for session context
   (context-compression), NOT for code structure (architecture-review), and
   NOT for authoring substantial net-new documentation from scratch.
 ---
