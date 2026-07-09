@@ -2,6 +2,15 @@
 
 Twelve skills plus hook-enforced session memory, packaged as one Claude Code plugin.
 
+**v2.0.0:** every skill rebuilt through the
+[skill-architect](https://github.com/rolling-codes/-the-better-skill-creator-skill-)
+six-gate pipeline. Each skill now carries an explicit Capability + Trigger +
+Boundary description (so skills fire when they should and stay silent when a
+sibling owns the task), an Iron Law stating its one non-negotiable rule as
+"X because Y" reasoning, and a Red Flags table of agent-introspected
+rationalizations paired with the correct behavior. Pairwise description overlap
+was checked across all twelve before release.
+
 ## What the hooks do
 
 Skills are instructions Claude can forget. Hooks are guarantees that fire every time.
