@@ -1,0 +1,24 @@
+{
+  "_comment": "Alias -> API model string. Update strings here when new versions ship; nothing else in the pack should hardcode a model name.",
+  "aliases": {
+    "fast": "claude-haiku-4-5-20251001",
+    "standard": "claude-sonnet-5",
+    "deep": "claude-opus-4-8"
+  },
+  "task_map": {
+    "planning": "fast",
+    "routing": "fast",
+    "issue_triage": "fast",
+    "memory_load": "fast",
+    "memory_save": "fast",
+    "coding": "standard",
+    "code_review": "standard",
+    "branch_ops": "standard",
+    "test_writing": "standard",
+    "subagent_read_summarize": "fast",
+    "subagent_codegen": "standard",
+    "architecture": "deep",
+    "deep_debugging": "deep",
+    "security_review": "deep"
+  }
+}
