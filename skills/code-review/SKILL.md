@@ -194,9 +194,13 @@ HEAD_SHA=$(git rev-parse HEAD)
 **2. Dispatch the code-reviewer agent (ships with this plugin):**
 
 Pass in the task message: a brief description of what was built, the plan or
-requirements it should satisfy, and the BASE and HEAD SHAs. The agent runs in
-its own context window and returns only findings, so the review costs the main
-conversation almost nothing.
+requirements it should satisfy, and the BASE and HEAD SHAs. Run the graph
+availability check per dev-workflow's `references/graph-tools.md` (if
+installed); when a graph exists, also include
+`KNOWLEDGE_GRAPH: graphify-out/graph.json` in the task message — the briefing
+rule in dev-workflow's `references/sub-agents.md` applies to this dispatch too.
+The agent runs in its own context window and returns only findings, so the
+review costs the main conversation almost nothing.
 
 **3. Act on feedback:**
 - Fix Critical issues immediately

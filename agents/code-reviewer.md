@@ -20,6 +20,18 @@ git diff --stat BASE_SHA..HEAD_SHA
 git diff BASE_SHA..HEAD_SHA
 ```
 
+## Graph before files
+
+Before reading any source beyond the diff itself, check for a graph: if the
+dispatch message names a KNOWLEDGE_GRAPH or `graphify-out/graph.json` exists,
+query it (`graphify query` / `path` / `explain`) for the modules the diff
+touches; otherwise, if the codegraph MCP is available, query it for callers and
+blast radius of the changed symbols. Querying costs one tool call; reading the
+equivalent context from files costs thousands of tokens.
+
+Read surrounding file context only where a diff hunk is ambiguous — use
+targeted reads (`sed -n`), not full-file loads.
+
 ## Read-only review
 
 Do not mutate the working tree, the index, HEAD, or branch state in any way.
