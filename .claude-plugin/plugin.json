@@ -1,6 +1,6 @@
 {
   "name": "dev-workflow-pack",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Twelve development-workflow skills rebuilt through the skill-architect six-gate pipeline, plus hook-enforced session memory and branch protection, packaged as one Claude Code plugin.",
   "author": {
     "name": "RollingCodes",
