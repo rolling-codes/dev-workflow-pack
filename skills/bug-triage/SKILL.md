@@ -82,7 +82,10 @@ same line with *different* root causes stay separate.
 - **Medium** — Real bug, limited trigger or contained blast radius. Schedule it.
 - **Low** — Minor or very hard to hit. Backlog.
 
-Round up when the code is widely depended on.
+Round up when the code is widely depended on. When a graph is available (per
+dev-workflow's `references/graph-tools.md`), score the blast-radius axis from
+the affected symbol's edge count rather than estimating it — the lookup is one
+tool call and removes the axis most prone to guesswork.
 
 ---
 

@@ -14,5 +14,9 @@ sed -n '{start},{end}p' {file}
 grep -n "functionName" src/**/*.ts | head -20
 ```
 
+When a graph is available (per `references/graph-tools.md`), query it for the
+callers of the failing function instead of grepping the call chain by hand —
+grep is the fallback, not the first move.
+
 Use `deep` for bugs where reasoning across multiple files is needed.
 Drop back to `standard` once the cause is identified and you're writing the fix.

@@ -64,6 +64,9 @@ step produces tests that mirror the implementation instead of the specification.
 **Edge cases specific to this codebase:**
 - Re-read the bug/feature description for words like "never", "always", "only if" —
   each is a boundary to test
+- When a graph is available (per dev-workflow's `references/graph-tools.md`),
+  query it for callers of the unit under test before enumerating integration
+  cases — callers are the integration surface, and the query beats browsing
 - Check for existing similar code in the repo and see what it tests (or fails to)
 
 **Regression:**
