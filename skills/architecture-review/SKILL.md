@@ -44,12 +44,24 @@ bound the read before opening files.
 
 ---
 
+## Step 1.5: Measure Before Reading
+
+Run the graph availability check per dev-workflow's `references/graph-tools.md`
+(if dev-workflow is installed). If a graph is available, pull fan-out counts and
+blast-radius edge counts from it for every module in scope before opening any
+file — open files only to verify edges the graph flags. Hand-counting what a graph
+already measures is the expensive path to a less reliable number. If no graph,
+bound the read with `grep -rl` / `git diff` as above.
+
+---
+
 ## Step 2: Check Each Axis
 
 **Coupling** — how much does this module know about others' internals?
 - Direct reach into another module's internal state/private fields → high coupling
 - Communication only through defined interfaces/events → low coupling
-- Count fan-out: how many other modules does this one import/call directly?
+- Count fan-out: how many other modules does this one import/call directly? — from
+  the graph when available, per Step 1.5
 
 **Cohesion** — does everything in this module belong together?
 - Do its functions share a single responsibility, or is it a junk drawer?
@@ -70,7 +82,8 @@ toward volatile concrete detail?
 **Future maintenance cost** — projecting forward, not just describing today
 - If this pattern is copied 10 more times (10 more plugins, 10 more endpoints),
   does it still hold up?
-- What's the blast radius of a change to this module's public shape?
+- What's the blast radius of a change to this module's public shape? — from the
+  graph when available, per Step 1.5
 
 ---
 
